@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This website is develop for identify the safety of url.">
+    <meta name="keywords" content="phishing url,phishing,cyber security,machine learning,classifier,python">
+    <meta name="author" content="VAIBHAV BICHAVE">
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        
+    <link href="static/styles.css" rel="stylesheet">
+    <title>URL detection</title>
+    
+</head>
+
+<body>
+    
+<div class="main-body">
+    <div class="form" id="form1">
+        <H2>PHISHING URL DETECTION</H2>
+
+    <br><br><br>
+        <form action="/predict" method ="post">
+            <input type="text" class="form__input" name ='url' id="url" placeholder="Enter URL" required="" />
+            <label for="url" class="form__label">URL</label>
+            <button class="button" role="button" >Check here</button>
+        </form>
+        
+        <br>
+    <br>
+    <p>©2021 VAIBHAV BICHAVE</p>
+    </div>
+    <div id="form2">
+
+    <br>
+    <h6 class = "right "><a href= {{ url }} target="_blank">{{ url }}</a></h6>
+       
+    <br>
+    <h3 id="prediction"></h3>
+    <button class="button2" id="button2" role="button" onclick="window.open('{{url}}')" target="_blank" >Still want to Continue</button>
+    <button class="button1" id="button1" role="button"  onclick="window.open('{{url}}')" target="_blank">Continue</button>
+    </div> 
+</div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    
+    <script>
+        
+            let x = '{{xx}}';
+            let num = x*100;
+            if (0<=x && x<0.50){
+                num = 100-num;
+            }
+            let txtx = num.toString();
+            if(x<=1 && x>=0.50){
+                var label = "Website is "+txtx +"% safe to use...";
+                document.getElementById("prediction").innerHTML = label;
+                document.getElementById("button1").style.display="block";
+            }
+            else if (0<=x && x<0.50){
+                var label = "Website is "+txtx +"% unsafe to use..."
+                document.getElementById("prediction").innerHTML = label ;
+                document.getElementById("button2").style.display="block";
+            }
+        
+    </script>
+    
+</body>
+
+</html>
+
