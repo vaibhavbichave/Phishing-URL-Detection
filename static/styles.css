@@ -8,11 +8,9 @@
 }
 
 body {
-  height: 100vh;
-	width: 100vw;
+  padding: 10% 5%;
   background: #0f2027;
   background: linear-gradient(to right,#2c5364, #203a43, #0f2027);
-  display: flex;
   justify-content: center;
   align-items: center; 
   height: 100vh;
@@ -34,12 +32,11 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #333;
   font-size: 1.2rem;
-	margin: 0 auto;
   padding: 1.5rem 2rem;
   border-radius: 0.2rem;
   background-color: rgb(255, 255, 255);
   border: none;
-  width: 90%;
+  width: 75%;
   display: block;
   border-bottom: 0.3rem solid transparent;
   transition: all 0.3s;
@@ -94,7 +91,7 @@ body {
 .main-body{
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 75%;
   justify-content:space-around;
 }
 
@@ -157,4 +154,13 @@ body {
 .right {
   right: 0px;
   width: 300px; 
+}
+
+@media (max-width: 576px) { 
+  .form {
+    width: 100%;
+  }
+ }
+.abc{
+  width: 50%;
 }
