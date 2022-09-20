@@ -23,6 +23,8 @@ pip install -r requirements.txt
 
 ## Directory Tree 
 ```
+├── pickle
+│   ├── model.pkl
 ├── static
 │   ├── styles.css
 ├── templates
