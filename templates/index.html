@@ -19,29 +19,30 @@
 
 <body>
     
-<div class=" container">
-    <div class="row">
-        <div class="form col-md" id="form1">
-            <h2>PHISHING URL DETECTION</h2>
-    
-            <br>
-            <form action="/" method ="post">
-                <input type="text" class="form__input" name ='url' id="url" placeholder="Enter URL" required="" />
-                <label for="url" class="form__label">URL</label>
-                <button class="button" role="button" >Check here</button>
-            </form>
-           
-    </div>
-    
-    <div class="col-md" id="form2">
+<div class="main-body">
+    <div class="form" id="form1">
+        <H2>PHISHING URL DETECTION</H2>
+
+    <br><br><br>
+        <form action="/predict" method ="post">
+            <input type="text" class="form__input" name ='url' id="url" placeholder="Enter URL" required="" />
+            <label for="url" class="form__label">URL</label>
+            <button class="button" role="button" >Check here</button>
+        </form>
         
         <br>
-        <h6 class = "right "><a href= {{ url }} target="_blank">{{ url }}</a></h6>
-           
-        <br>
-        <h3 id="prediction"></h3>
-        <button class="button2" id="button2" role="button" onclick="window.open('{{url}}')" target="_blank" >Still want to Continue</button>
-        <button class="button1" id="button1" role="button"  onclick="window.open('{{url}}')" target="_blank">Continue</button>
+    <br>
+    <p>©2021 VAIBHAV BICHAVE</p>
+    </div>
+    <div id="form2">
+
+    <br>
+    <h6 class = "right "><a href= {{ url }} target="_blank">{{ url }}</a></h6>
+       
+    <br>
+    <h3 id="prediction"></h3>
+    <button class="button2" id="button2" role="button" onclick="window.open('{{url}}')" target="_blank" >Still want to Continue</button>
+    <button class="button1" id="button1" role="button"  onclick="window.open('{{url}}')" target="_blank">Continue</button>
     </div> 
 </div>
 <br>
